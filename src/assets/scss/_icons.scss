@@ -1,0 +1,74 @@
+$icons: sprite-map("icons/*.png", $layout: vertical);
+$prefix: 'icon-';
+$icons-spacing: 1px;
+
+.icons-sprite {
+  background-image: sprite-url($icons);
+}
+
+
+@mixin fnIcon($name) {
+  $name: $prefix + $name;
+  width: image-width(sprite-file($icons, $name));
+  height: image-height(sprite-file($icons, $name));
+  background-image: sprite-url($icons);
+  background-position: sprite-position($icons, $name);
+  background-repeat: no-repeat;
+  //background-size: image-width('icons-/*/.png') image-height('icons-/*/.png');
+}
+
+.icon {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  vertical-align: middle;
+}
+
+.icon-today-deal {
+  @include fnIcon(today-deal);
+}
+.icon-snack {
+  @include fnIcon(snack);
+}
+.icon-taste {
+  @include fnIcon(taste);
+}
+.icon-clothing {
+  @include fnIcon(clothing);
+}
+.icon-jewelry {
+  @include fnIcon(jewelry);
+}
+.icon-digital {
+  @include fnIcon(digital);
+}
+.icon-life-creativity {
+  @include fnIcon(life-creativity);
+}
+.icon-special {
+  @include fnIcon(special);
+}
+.icon-enai-vip {
+  @include fnIcon(enai-vip);
+}
+.icon-QQ {
+  @include fnIcon(QQ);
+}
+.icon-email {
+  @include fnIcon(email);
+}
+.icon-arrow-right {
+  @include fnIcon(arrow-right);
+}
+.icon-item-submit {
+  @include fnIcon(item-submit);
+}
+.icon-item-audit {
+  @include fnIcon(item-audit);
+}
+.icon-activity-schedule {
+  @include fnIcon(activity-schedule);
+}
+.icon-activity-onine {
+  @include fnIcon(activity-onine);
+}

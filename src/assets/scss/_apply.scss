@@ -1,0 +1,176 @@
+.apply-container {
+  padding-bottom: 507px;
+  .questions-rules {
+    width: 950px;
+    margin: 53px auto 0;
+    >img {
+      margin-bottom: 67px;
+      display: block;
+    }
+    >h5 {
+      margin-top: 39px;
+    }
+    >ul {
+      margin-top: 34px;
+      @extend %cf;
+      >li {
+        float: left;
+      }
+      h6 {
+        font-size: 20px;
+        margin-top: 14px;
+      }
+      .icon {
+        width: 16px;
+        height: 20px;
+        margin: 0 9px 0 4px;
+      }
+    }
+    p {
+      font-size: 14px;
+      line-height: 24px;
+      color: rgb(18, 18, 18);
+      margin-top: 23px;
+      a {
+        color: #f72862;
+        font-size: 16px;
+        text-decoration: underline;
+        line-height: 30px;
+      }
+    }
+    .item-submit {
+      h6 {
+        color: rgb(254, 60, 7);
+      }
+    }
+    .item-audit {
+      h6 {
+        color: rgb(74, 171, 0);
+      }
+    }
+    .activity-schedule {
+      h6 {
+        color: rgb(0, 117, 198);
+      }
+    }
+    .activity-onine {
+      h6 {
+        color: rgb(233, 22, 99);
+      }
+    }
+    .process {
+      display: inline-block;
+      width: 212px;
+      height: 226px;
+      border: 1px solid #D7D8D9;
+      border-radius: 6px;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0 14px;
+      p {
+        margin-top: 23px;
+        line-height: 22px;
+      }
+    }
+    .header {
+      .icon {
+        margin-top: 32px;
+        width: 42px;
+        height: 42px;
+      }
+    }
+  }
+  .form {
+    width: 950px;
+    margin: 82px auto 0;
+  }
+  .form-header {
+  }
+  .form-body {
+    padding-top: 30px;
+    p {
+      margin-top: 82px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 16px;
+      color: #959595;
+      span {
+        color: #383838;
+      }
+    }
+    .btns {
+      margin-top: 71px;
+      text-align: center;
+    }
+  }
+  .form-group {
+    margin-top: 10px !important;
+    position: relative;
+    >label {
+      position: absolute;
+      width: 138px;
+      height: 43px;
+      line-height: 43px;
+      left: 0;
+      top: 0;
+      color: #5f5f5f;
+      text-align: right;
+    }
+    .input {
+      position: relative;
+      padding-left: 162px;
+      min-height: 43px;
+      color: #5f5f5f;
+    }
+    select {
+      width: 306px;
+      border: 1px solid #ccc;
+      outline: 0;
+      border-radius: 8px;
+      padding-left: 11px;
+      color: #5f5f5f;
+      display: inline-block;
+      height: 43px;
+      line-height: 43px;
+      vertical-align: middle;
+    }
+    input[type="text"] {
+      display: inline-block;
+      height: 43px;
+      line-height: 43px;
+      width: 678px;
+      outline: 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      color: #5f5f5f;
+      padding-left: 11px;
+      vertical-align: middle;
+    }
+    input[type="radio"] {
+      display: inline-block;
+      height: 43px;
+      line-height: 43px;
+      vertical-align: middle;
+      &~input[type="radio"] {
+        margin-left: 5px;
+      }
+      &+label {
+        min-width: 50px;
+        line-height: normal;
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
+    .tips-err {
+      padding-left: 162px;
+      padding-top: 10px;
+      color: #F62F67;
+      display: none;
+    }
+  }
+  .price-stock {
+    input {
+      width: 306px !important;
+    }
+  }
+}

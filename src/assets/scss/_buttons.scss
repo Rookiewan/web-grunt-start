@@ -1,0 +1,37 @@
+.btn-apply,
+.btn-submit {
+  display: inline-block;
+  width: 254px;
+  height: 84px;
+  line-height: 84px;
+  font-size: 30px;
+  color: #fff;
+  background: #f62f67;
+  border: 2px solid #fff;
+  border-radius: 16px;
+  outline: 0;
+  padding: 0;
+  text-align: center;
+  font-family: Adobe Heiti Std R;
+  transition: all .2s;
+  &:hover {
+    background: #ED255D;
+  }
+}
+.btn-submit {
+  letter-spacing: 37px;
+  text-indent: 37px;
+}
+.btn-alert-ok {
+  display: block;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  background: #FF6996;
+  letter-spacing: 6px;
+  text-indent: 6px;
+  outline: 0;
+}
