@@ -1,33 +1,21 @@
 {
-  "name": "grunt-cdn-upyun",
-  "description": "The UPYUN upload plugin.",
+  "name": "web-grunt-start",
+  "description": "a project for common project with grunt",
   "version": "0.1.0",
-  "homepage": "https://github.com/xiaoenai/grunt-cdn-upyun",
-  "author": {
-    "name": "Longbo Ma",
-    "email": "mlongbo@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/xiaoenai/grunt-cdn-upyun.git"
-  },
-  "bugs": {
-    "url": "https://github.com/xiaoenai/grunt-cdn-upyun/issues"
-  },
+  "homepage": "https://github.com/Rookiewan/web-grunt-start",
   "license": "MIT",
   "engines": {
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "dev": "grunt server",
+    "build": "grunt build"
   },
   "peerDependencies": {
     "grunt": "~1.0.0"
   },
   "keywords": [
-    "grunt",
-    "cdn",
-    "upyun"
+    "grunt"
   ],
   "devDependencies": {
     "connect-livereload": "^0.5.4",
