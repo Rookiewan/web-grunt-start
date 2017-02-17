@@ -3,8 +3,8 @@
 
 ##set up
 ```
-git clone git@gitlab.xiaoenai.net:h5/investment-platform.git
-cd investment-platform
+git clone https://github.com/Rookiewan/web-grunt-start.git
+cd web-grunt-start
 npm install
 
 ```
@@ -14,7 +14,7 @@ npm install
 ```
 #Dev
 grunt server
-open http://localhost:2016/
+open http://localhost:2017/
 
 #Build
 grunt build

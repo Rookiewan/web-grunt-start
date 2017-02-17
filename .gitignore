@@ -4,4 +4,4 @@ node_modules/
 .sass-cache/
 .git/
 src/assets/img/icons-*.png
-src/assets/font/
+src/assets/font/*
