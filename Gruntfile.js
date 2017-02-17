@@ -94,7 +94,12 @@ module.exports = function (grunt) {
           {
             flatten: true,
             expand: true,
-            src: ['<%= path.dev %>assets/img/**/*.png', '!<%= path.dev %>assets/img/icons/*.png'],
+            src: [
+              '<%= path.dev %>assets/img/**/*.png',
+              '<%= path.dev %>assets/img/**/*.jpg',
+              '!<%= path.dev %>assets/img/icons/*.png',
+              '!<%= path.dev %>assets/img/icons/*.jpg'
+            ],
             dest: '<%= path.dest %>assets/img/'
           }
         ]
@@ -140,7 +145,7 @@ module.exports = function (grunt) {
         }
       },
       icons: {
-        files: '<%= path.dev %>assets/img/icons/*.png',
+        files: ['<%= path.dev %>assets/img/icons/*.png', '<%= path.dev %>assets/img/icons/*.jpg'],
         tasks: ['sass'],
         options: {
           livereload: true
@@ -188,6 +193,7 @@ module.exports = function (grunt) {
         files: [ {
           src: [
             '<%= path.dest %>assets/img/**/*.png',
+            '<%= path.dest %>assets/img/**/*.jpg'
           ]
         }]
       },
