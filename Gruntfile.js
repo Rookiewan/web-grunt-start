@@ -51,47 +51,36 @@ module.exports = function (grunt) {
 
     sass: {
       dist: {
-        // files: [
-        //   {
-        //     expand: true,
-        //     cwd: 'styles',
-        //     src: ['src/assets/scss/app.scss'],
-        //     dest: 'dest/assets/css/',
-        //     ext: '.css'
-        //   }
-        // ]
         options: {
           style: 'compressed',
           compass: true
         },
-        files: {
-          // '<%= path.dest %>assets/css/app.css': '<%= path.dev %>assets/scss/app.scss',
-          // '<%= path.dest %>assets/css/mobile.css': '<%= path.dev %>assets/scss/mobile.scss',
-          // '<%= path.dest %>assets/css/goddess.css': '<%= path.dev %>assets/scss/goddess.scss',
-          // '<%= path.dest %>assets/css/goddess_mobile.css': '<%= path.dev %>assets/scss/goddess_mobile.scss'
-        }
+        files: [
+          {
+            expand: true,
+            cwd: '<%= path.dev %>assets/scss',
+            src: ['app.scss'],
+            dest: '<%= path.dest %>assets/css/',
+            ext: '.css'
+          }
+        ]
       },
       dev: {
         options: {
-          style: 'expanded',
+          style: 'compressed',
           compass: true
         },
-        files: {
-          // '<%= path.dest %>assets/css/app.css': '<%= path.dev %>assets/scss/app.scss',
-          // '<%= path.dest %>assets/css/mobile.css': '<%= path.dev %>assets/scss/mobile.scss',
-          // '<%= path.dest %>assets/css/goddess.css': '<%= path.dev %>assets/scss/goddess.scss',
-          // '<%= path.dest %>assets/css/goddess_mobile.css': '<%= path.dev %>assets/scss/goddess_mobile.scss'
-        }
+        files: [
+          {
+            expand: true,
+            cwd: '<%= path.dev %>assets/scss',
+            src: ['app.scss'],
+            dest: '<%= path.dest %>assets/css/',
+            ext: '.css'
+          }
+        ]
       }
     },
-
-    // compass: {
-    //    dest: {
-    //     options: {
-    //      config: 'config.rb'
-    //     }
-    //   }
-    // },
 
     copy: {
       html: {
@@ -105,15 +94,9 @@ module.exports = function (grunt) {
           {
             flatten: true,
             expand: true,
-            src: ['<%= path.dev %>assets/img/*.png'],
+            src: ['<%= path.dev %>assets/img/**/*.png', '!<%= path.dev %>assets/img/icons/*.png'],
             dest: '<%= path.dest %>assets/img/'
-          },
-          // {
-          //   flatten: true,
-          //   expand: true,
-          //   src: ['<%= path.dev %>assets/img/goddess/*.jpg', '<%= path.dev %>assets/img/goddess/*.png'],
-          //   dest: '<%= path.dest %>assets/img/goddess/'
-          // }
+          }
         ]
       },
       libs: {
@@ -151,7 +134,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: '<%= path.dev %>assets/scss/**.scss',
-        tasks: ['sass:dist'],
+        tasks: ['sass:dev'],
         options: {
           livereload: true
         }
@@ -164,7 +147,7 @@ module.exports = function (grunt) {
         }
       },
       autoprefixer: {
-        files: ['<%= path.dest %>assets/css/app.css', '<%= path.dest %>assets/css/mobile.css', '<%= path.dest %>assets/css/goddess.css', '<%= path.dest %>assets/css/goddess_mobile.css'],
+        files: ['<%= path.dest %>assets/css/*.css'],
         task: ['autoprefixer:dist'],
         options: {
           livereload: true
@@ -188,12 +171,10 @@ module.exports = function (grunt) {
         browers: ['last 2 versions', 'ie 8', 'ie 9']
       },
       dist: {
-        files: {
-          '<%= path.dest %>assets/css/app.css': '<%= path.dest %>assets/css/app.css',
-          '<%= path.dest %>assets/css/mobile.css': '<%= path.dest %>assets/css/mobile.css',
-          '<%= path.dest %>assets/css/goddess.css': '<%= path.dest %>assets/css/goddess.css',
-          '<%= path.dest %>assets/css/goddess_mobile.css': '<%= path.dest %>assets/css/goddess_mobile.css'
-        }
+        expand: true,
+        flatten: true,
+        src: '<%= path.dest %>assets/css/*.css',
+        dest: '<%= path.dest %>assets/css/'
       }
     },
 
@@ -206,9 +187,7 @@ module.exports = function (grunt) {
       images_fonts: {
         files: [ {
           src: [
-            '<%= path.dest %>assets/img/*.png',
-            '<%= path.dest %>assets/img/goddess/*.png',
-            '<%= path.dest %>assets/img/goddess/*.jpg'
+            '<%= path.dest %>assets/img/**/*.png',
           ]
         }]
       },
@@ -261,9 +240,9 @@ module.exports = function (grunt) {
       dest: {
         files: [{
           expand: true,
-          cwd: 'dest/assets/img/',
+          cwd: '<%= path.dest %>assets/img/',
           src: ['*.{png,jpg,gif}'],
-          dest: 'dest/assets/img/'
+          dest: '<%= path.dest %>assets/img/'
         }]
       }
     },
@@ -274,7 +253,7 @@ module.exports = function (grunt) {
         ignore: ['\\.woff2$']
       },
       main: {
-        src: './dest/**/*.html'
+        src: './<%= path.dest %>**/*.html'
       }
     }
   })
@@ -298,7 +277,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin')
   grunt.loadNpmTasks('grunt-base-tag')
   grunt.loadNpmTasks('grunt-enai-upyun')
-  grunt.loadNpmTasks('grunt-cdn')
   grunt.loadNpmTasks('grunt-font-spider');
 
   // By default, lint and run all tests.

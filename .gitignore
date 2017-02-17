@@ -1,3 +1,6 @@
 dest/
 npm-debug.log
 node_modules/
+.sass-cache/
+.git/
+src/assets/img/icons-*.png
